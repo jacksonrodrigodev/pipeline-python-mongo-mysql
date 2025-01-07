@@ -12,7 +12,7 @@ if __name__ == "__main__":
 
     # URI de conexão com o MongoDB
     load_dotenv()
-    uri = os.getenv("URI")
+    uri = os.getenv("MONGODB_URI")
 
     # Conectando ao MongoDB
     client = connect_mongo(uri)

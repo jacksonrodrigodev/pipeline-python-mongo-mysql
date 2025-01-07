@@ -15,7 +15,7 @@ import pandas as pd
 if __name__ == "__main__":
     # URI de conexão com o MongoDB
     load_dotenv()
-    uri = os.getenv("URI")
+    uri = os.getenv("MONGODB_URI")
 
     # Conectando ao MongoDB
     client = connect_mongo(uri)
@@ -40,10 +40,10 @@ if __name__ == "__main__":
     df_livros = format_date(df_livros)
 
     # Criando o diretório ../data se não existir
-    os.makedirs("../data", exist_ok=True)
+    os.makedirs("data", exist_ok=True)
 
     # Salvando os dados da categoria "livros" em CSV
-    save_csv(df_livros, "../data/tabela_livros.csv")
+    save_csv(df_livros, "data/tabela_livros.csv")
 
     query = {"Data da Compra": {"$regex": "/202[1-9]"}}
     # Selecionando os produtos vendidos a partir de 2021
@@ -53,6 +53,6 @@ if __name__ == "__main__":
     df_2021 = format_date(df_2021)
 
     # Salvando os dados dos produtos vendidos a partir de 2021 em CSV
-    save_csv(df_2021, "../data/tabela_2021_em_diante.csv")
+    save_csv(df_2021, "data/tabela_2021_em_diante.csv")
 
     client.close()
