@@ -43,7 +43,7 @@ if __name__ == "__main__":
     os.makedirs("../data", exist_ok=True)
 
     # Salvando os dados da categoria "livros" em CSV
-    save_csv(df_livros, "../data/tabela_livros2.csv")
+    save_csv(df_livros, "../data/tabela_livros.csv")
 
     query = {"Data da Compra": {"$regex": "/202[1-9]"}}
     # Selecionando os produtos vendidos a partir de 2021
@@ -53,6 +53,6 @@ if __name__ == "__main__":
     df_2021 = format_date(df_2021)
 
     # Salvando os dados dos produtos vendidos a partir de 2021 em CSV
-    save_csv(df_2021, "../data/tabela_2021_em_diante2.csv")
+    save_csv(df_2021, "../data/tabela_2021_em_diante.csv")
 
     client.close()
