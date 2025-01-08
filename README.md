@@ -4,7 +4,7 @@
 
 1. **Clone o repositório:**
     ```bash
-    git clone https://github.com/seu-usuario/pipeline-python-mongo-mysql.git
+    git clone https://github.com/jacksonrodrigodev/pipeline-python-mongo-mysql.git
     cd pipeline-python-mongo-mysql
     ```
 
@@ -39,7 +39,7 @@
     ```bash
     python extract_and_save_data.py
     python transform_data.py
-    python load_data.py
+    python load_data_mysql.py
     ```
 
 Pronto! Agora você deve ter o projeto rodando corretamente.
